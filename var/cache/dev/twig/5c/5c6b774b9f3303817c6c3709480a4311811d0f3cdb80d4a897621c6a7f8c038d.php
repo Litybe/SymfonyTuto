@@ -11,7 +11,7 @@ class __TwigTemplate_79fd302edfb2f05e0b336d80e2edfffdbe0d5a209defbc5dd15a6d66a32
         $this->parent = $this->loadTemplate("OCPlateformBundle::layout.html.twig", "OCPlateformBundle:Advert:index.html.twig", 3);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'body' => array($this, 'block_body'),
+            'ocplatform_body' => array($this, 'block_ocplatform_body'),
         );
     }
 
@@ -22,39 +22,85 @@ class __TwigTemplate_79fd302edfb2f05e0b336d80e2edfffdbe0d5a209defbc5dd15a6d66a32
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cddbd864d00ec854507fa69b9821a934d06b844819988efd410c2437b5eb8a5a = $this->env->getExtension("native_profiler");
-        $__internal_cddbd864d00ec854507fa69b9821a934d06b844819988efd410c2437b5eb8a5a->enter($__internal_cddbd864d00ec854507fa69b9821a934d06b844819988efd410c2437b5eb8a5a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCPlateformBundle:Advert:index.html.twig"));
+        $__internal_397f9cd2ba85f57118ed27cd096727f79576c5fee766ed800db6de3da0ae8e48 = $this->env->getExtension("native_profiler");
+        $__internal_397f9cd2ba85f57118ed27cd096727f79576c5fee766ed800db6de3da0ae8e48->enter($__internal_397f9cd2ba85f57118ed27cd096727f79576c5fee766ed800db6de3da0ae8e48_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OCPlateformBundle:Advert:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cddbd864d00ec854507fa69b9821a934d06b844819988efd410c2437b5eb8a5a->leave($__internal_cddbd864d00ec854507fa69b9821a934d06b844819988efd410c2437b5eb8a5a_prof);
+        $__internal_397f9cd2ba85f57118ed27cd096727f79576c5fee766ed800db6de3da0ae8e48->leave($__internal_397f9cd2ba85f57118ed27cd096727f79576c5fee766ed800db6de3da0ae8e48_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_6c9ab471c881a395ba62cfea1fb827017eaf7726ed1f32f7d39c803900c976ea = $this->env->getExtension("native_profiler");
-        $__internal_6c9ab471c881a395ba62cfea1fb827017eaf7726ed1f32f7d39c803900c976ea->enter($__internal_6c9ab471c881a395ba62cfea1fb827017eaf7726ed1f32f7d39c803900c976ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_33b65e94708c13eb4df84930135c50c2674e495db6a7035260a933da423d78b7 = $this->env->getExtension("native_profiler");
+        $__internal_33b65e94708c13eb4df84930135c50c2674e495db6a7035260a933da423d78b7->enter($__internal_33b65e94708c13eb4df84930135c50c2674e495db6a7035260a933da423d78b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
+        // line 6
+        echo "    Accueil - ";
         $this->displayParentBlock("title", $context, $blocks);
-        echo " - Index";
+        echo "
+";
         
-        $__internal_6c9ab471c881a395ba62cfea1fb827017eaf7726ed1f32f7d39c803900c976ea->leave($__internal_6c9ab471c881a395ba62cfea1fb827017eaf7726ed1f32f7d39c803900c976ea_prof);
+        $__internal_33b65e94708c13eb4df84930135c50c2674e495db6a7035260a933da423d78b7->leave($__internal_33b65e94708c13eb4df84930135c50c2674e495db6a7035260a933da423d78b7_prof);
 
     }
 
-    // line 7
-    public function block_body($context, array $blocks = array())
+    // line 9
+    public function block_ocplatform_body($context, array $blocks = array())
     {
-        $__internal_0f34cb44aab132891d346866da45cd46dc9b7d4bb5d5d85a2ff7c9186b16d21c = $this->env->getExtension("native_profiler");
-        $__internal_0f34cb44aab132891d346866da45cd46dc9b7d4bb5d5d85a2ff7c9186b16d21c->enter($__internal_0f34cb44aab132891d346866da45cd46dc9b7d4bb5d5d85a2ff7c9186b16d21c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_cb2fc8a2021b2686cef22bf9fe7a7b2d0ae95512cfd3aa561f44e1a5b5d953df = $this->env->getExtension("native_profiler");
+        $__internal_cb2fc8a2021b2686cef22bf9fe7a7b2d0ae95512cfd3aa561f44e1a5b5d953df->enter($__internal_cb2fc8a2021b2686cef22bf9fe7a7b2d0ae95512cfd3aa561f44e1a5b5d953df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "ocplatform_body"));
 
-        // line 8
-        echo "    Notre plateforme est un peu vide pour le moment, mais cela viendra !
+        // line 10
+        echo "
+    <h2>Liste des annonces</h2>
+
+    <ul>
+        ";
+        // line 14
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listAdverts"]) ? $context["listAdverts"] : $this->getContext($context, "listAdverts")));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["advert"]) {
+            // line 15
+            echo "            <li>
+                <a href=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("oc_platform_view", array("id" => $this->getAttribute($context["advert"], "id", array()))), "html", null, true);
+            echo "\">
+                    ";
+            // line 17
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "title", array()), "html", null, true);
+            echo "
+                </a>
+                par ";
+            // line 19
+            echo twig_escape_filter($this->env, $this->getAttribute($context["advert"], "author", array()), "html", null, true);
+            echo ",
+                le ";
+            // line 20
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["advert"], "date", array()), "d/m/Y"), "html", null, true);
+            echo "
+            </li>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 23
+            echo "            <li>Pas (encore !) d'annonces</li>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['advert'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 25
+        echo "    </ul>
+
 ";
         
-        $__internal_0f34cb44aab132891d346866da45cd46dc9b7d4bb5d5d85a2ff7c9186b16d21c->leave($__internal_0f34cb44aab132891d346866da45cd46dc9b7d4bb5d5d85a2ff7c9186b16d21c_prof);
+        $__internal_cb2fc8a2021b2686cef22bf9fe7a7b2d0ae95512cfd3aa561f44e1a5b5d953df->leave($__internal_cb2fc8a2021b2686cef22bf9fe7a7b2d0ae95512cfd3aa561f44e1a5b5d953df_prof);
 
     }
 
@@ -70,15 +116,33 @@ class __TwigTemplate_79fd302edfb2f05e0b336d80e2edfffdbe0d5a209defbc5dd15a6d66a32
 
     public function getDebugInfo()
     {
-        return array (  54 => 8,  48 => 7,  35 => 5,  11 => 3,);
+        return array (  99 => 25,  92 => 23,  84 => 20,  80 => 19,  75 => 17,  71 => 16,  68 => 15,  63 => 14,  57 => 10,  51 => 9,  41 => 6,  35 => 5,  11 => 3,);
     }
 }
 /* {# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}*/
 /* */
 /* {% extends "OCPlateformBundle::layout.html.twig" %}*/
 /* */
-/* {% block title %}{{ parent() }} - Index{% endblock %}*/
+/* {% block title %}*/
+/*     Accueil - {{ parent() }}*/
+/* {% endblock %}*/
 /* */
-/* {% block body %}*/
-/*     Notre plateforme est un peu vide pour le moment, mais cela viendra !*/
+/* {% block ocplatform_body %}*/
+/* */
+/*     <h2>Liste des annonces</h2>*/
+/* */
+/*     <ul>*/
+/*         {% for advert in listAdverts %}*/
+/*             <li>*/
+/*                 <a href="{{ path('oc_platform_view', {'id': advert.id}) }}">*/
+/*                     {{ advert.title }}*/
+/*                 </a>*/
+/*                 par {{ advert.author }},*/
+/*                 le {{ advert.date|date('d/m/Y') }}*/
+/*             </li>*/
+/*         {% else %}*/
+/*             <li>Pas (encore !) d'annonces</li>*/
+/*         {% endfor %}*/
+/*     </ul>*/
+/* */
 /* {% endblock %}*/
