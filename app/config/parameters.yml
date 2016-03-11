@@ -10,4 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 8c87cbb96932409b64ae87e349b2acb9ff45683f
-    app_webmaster: Tata

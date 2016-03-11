@@ -157,3 +157,15 @@ c941c2,::1,GET,http://localhost:8080/SymfonyProsit/web/app_dev.php/platform/adve
 107735,::1,GET,http://localhost:8080/SymfonyProsit/web/app_dev.php/platform,1457646215,,200
 cb21d4,127.0.0.1,GET,http://localhost:8080/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457646219,428a34,200
 428a34,::1,GET,http://localhost:8080/SymfonyProsit/web/app_dev.php/platform/advert/1,1457646219,,200
+dabcfa,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457683886,c7481d,200
+c7481d,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform,1457683886,,200
+4a06f1,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457683908,542a09,200
+542a09,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform/advert/2,1457683908,,200
+215551,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457683911,50ac96,200
+50ac96,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform/eddit/2,1457683911,,200
+57044c,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457683917,00dc5b,200
+00dc5b,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform/advert/2,1457683917,,200
+409aec,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457684130,ac91f1,200
+ac91f1,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform/advert/5,1457684130,,200
+d197b9,127.0.0.1,GET,http://localhost/SymfonyProsit/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DOCPlateformBundle%253AAdvert%253Amenu,1457684130,1ea8c9,200
+1ea8c9,::1,GET,http://localhost/SymfonyProsit/web/app_dev.php/platform/advert/2,1457684131,,200
