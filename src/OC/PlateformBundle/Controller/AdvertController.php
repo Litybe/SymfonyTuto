@@ -4,9 +4,12 @@
 
 namespace OC\PlateformBundle\Controller;
 
+use OC\PlateformBundle\Entity\Image;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use OC\PlateformBundle\Entity\Advert;
+
 
 class AdvertController extends Controller
 {
@@ -46,25 +49,57 @@ class AdvertController extends Controller
 
     public function viewAction($id)
     {
-        $advert = array(
-            'title'   => 'Recherche développpeur Symfony2',
-            'id'      => $id,
-            'author'  => 'Alexandre',
-            'content' => 'Nous recherchons un développeur Symfony2 débutant sur Lyon. Blabla…',
-            'date'    => new \Datetime()
-        );
+        // On récupère le repository
+        $repository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('OCPlateformBundle:Advert')
+        ;
 
+        // On récupère l'entité correspondante à l'id $id
+        $advert = $repository->find($id);
+
+        // $advert est donc une instance de OC\PlatformBundle\Entity\Advert
+        // ou null si l'id $id  n'existe pas, d'où ce if :
+        if (null === $advert) {
+            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
+        }
+
+        // Le render ne change pas, on passait avant un tableau, maintenant un objet
         return $this->render('OCPlateformBundle:Advert:view.html.twig', array(
             'advert' => $advert
         ));
     }
 
+
     public function addAction(Request $request)
     {
+
+        $advert = new Advert();
+        $advert->setTitle('Recherche developpeur Symfony2.');
+        $advert->setAuthor('Alexandre');
+        $advert->setContent("Nous recherchons un developpeur Symfony2 debutant sur Lyon. Blabla…");
+
+        $image = new Image();
+        $image->setUrl('http://sdz-upload.s3.amazonaws.com/prod/upload/job-de-reve.jpg');
+        $image->setAlt('Job de rêve');
+
+        $advert->setImage($image);
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($advert);
+
+        $em->flush();
         if ($request->isMethod('POST')) {
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
             return $this->redirectToRoute('oc_platform_view', array('id' => 5));
         }
+
+        $antispam = $this->container->get('oc_platform.antispam');
+        $text = '....';
+        if($antispam->isSpam($text)){
+            throw new \Exception('Votre message à été détecté comme spam');
+        }
+
         return $this->render('OCPlateformBundle:Advert:add.html.twig');
     }
 
