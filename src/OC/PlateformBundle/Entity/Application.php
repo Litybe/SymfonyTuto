@@ -138,11 +138,11 @@ class Application
     /**
      * Set advert
      *
-     * @param \OC\PlatformBundle\Entity\Advert $advert
+     * @param \OC\PlateformBundle\Entity\Advert $advert
      *
      * @return Application
      */
-    public function setAdvert(\OC\PlatformBundle\Entity\Advert $advert)
+    public function setAdvert(\OC\PlateformBundle\Entity\Advert $advert)
     {
         $this->advert = $advert;
     
@@ -152,7 +152,7 @@ class Application
     /**
      * Get advert
      *
-     * @return \OC\PlatformBundle\Entity\Advert
+     * @return \OC\PlateformBundle\Entity\Advert
      */
     public function getAdvert()
     {

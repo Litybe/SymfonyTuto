@@ -34,4 +34,18 @@
         </a>
     </p>
 
+
+
+        {% for advert in listApplications %}
+            <div class="well">
+            {{ advert.content }}
+                <br>
+                par {{ advert.author }},
+                le {{ advert.date|date('d/m/Y') }}
+            </div>
+            <br>
+        {% endfor %}
+
+
+
 {% endblock %}
