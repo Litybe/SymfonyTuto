@@ -134,6 +134,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_view_slug')), array (  '_controller' => 'OC\\PlateformBundle\\Controller\\AdvertController::viewSlugAction',));
             }
 
+            // oc_platform_profile
+            if ($pathinfo === '/platform/profile') {
+                return array (  '_controller' => 'OC\\PlateformBundle\\Controller\\ProfilerController::profileAction',  '_route' => 'oc_platform_profile',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1,0 +1,14 @@
+{% extends "OCPlateformBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+    <h3>Formulaire d'annonce</h3>
+
+    <div class="well">
+        {{ form(form) }}
+    </div>
+{% endblock %}

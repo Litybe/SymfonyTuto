@@ -9,7 +9,12 @@
 namespace OC\PlateformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Security\Core\User\User;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class ProfilerController extends Controller
 {
@@ -22,10 +27,22 @@ class ProfilerController extends Controller
     private $isVisble = true;
 
 
-    public function __construct()
+/*    public function __construct()
     {
-    }
+    }*/
 
+    public function profileAction(){
+    $user = new \OC\PlateformBundle\Entity\User();
+// 2.8    $formBuilder = $this->$this->get('form.factory')->creatBuilder('form',$user);
+        $form = $this->createFormBuilder($user)
+            ->add('lastname', TextType::class)
+            ->add('birthday', DateType::class)
+            ->add('save', SubmitType::class, array('label' => 'Create User'))
+            ->getForm();
+        return $this->render('OCPlateformBundle:Advert:profile.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
 
     /**
      * @return boolean
